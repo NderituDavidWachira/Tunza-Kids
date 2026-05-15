@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #4a90e2; 
+  margin-bottom: 0.5rem;
+}
+
+section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+button {
+  cursor: pointer;
+}

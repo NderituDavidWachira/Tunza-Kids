@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+/* =========================
+   BASE
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.contact {
+  background: #f7f5f0;
+  padding: 2.5rem 7% 2rem;
+  font-family: 'Instrument Sans', sans-serif;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   HEADER — compact
+========================= */
+.contact-header {
+  margin-bottom: 1.8rem;
+}
+
+.contact-header-kicker {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6a9e7b;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-header-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: #6a9e7b;
+  flex-shrink: 0;
+}
+
+.contact-header h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: #1c1b18;
+  line-height: 1.1;
+  margin-bottom: 0.45rem;
+}
+
+.contact-header h2 em {
+  font-style: italic;
+  color: #3d6b4f;
+}
+
+.contact-header p {
+  font-size: 0.88rem;
+  color: #6b6960;
+  line-height: 1.7;
+  max-width: 380px;
+  font-weight: 400;
+}
+
+/* =========================
+   TWO-COLUMN LAYOUT
+========================= */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3rem;
+  align-items: start;
+  flex: 1;
+  min-width: 0;
+}
+
+/* =========================
+   LEFT — CONTACT INFO
+========================= */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #dedad3;
+  min-width: 0;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #dedad3;
+}
+
+.contact-row-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: #e8f0eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-row-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: #3d6b4f;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-row-label {
+  font-size: 0.63rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a8880;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.contact-row-value {
+  font-size: 0.9rem;
+  color: #2e2d29;
+  line-height: 1.65;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.contact-row-value a {
+  color: #3d6b4f;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(61, 107, 79, 0.25);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-row-value a:hover {
+  color: #1a2e1f;
+  border-bottom-color: #1a2e1f;
+}
+
+/* =========================
+   OPENING HOURS
+========================= */
+.contact-hours {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #dedad3;
+}
+
+.contact-hours-label {
+  font-size: 0.63rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a8880;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hours-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.hours-row span:first-child {
+  color: #6b6960;
+  font-weight: 400;
+}
+
+.hours-row span:last-child {
+  color: #2e2d29;
+  font-weight: 500;
+}
+
+.hours-row.highlight span:last-child {
+  color: #3d6b4f;
+}
+
+/* =========================
+   RIGHT — MAP
+========================= */
+.map-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #dedad3;
+  padding-bottom: 62%;
+  height: 0;
+  background: #e8f0eb;
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.map-caption {
+  padding: 0.6rem 0 0;
+  font-size: 0.75rem;
+  color: #8a8880;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.map-caption::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6a9e7b;
+  flex-shrink: 0;
+}
+
+/* =========================
+   TABLET (≤ 860px)
+========================= */
+@media (max-width: 860px) {
+  .contact {
+    padding: 3rem 6%;
+    min-height: auto;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .map-wrapper {
+    padding-bottom: 55%;
+  }
+}
+
+/* =========================
+   MOBILE (≤ 600px)
+========================= */
+@media (max-width: 600px) {
+  .contact {
+    padding: 2.2rem 5%;
+  }
+
+  .contact-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-row {
+    padding: 1rem 0;
+  }
+
+  .map-wrapper {
+    padding-bottom: 70%;
+    border-radius: 8px;
+  }
+
+  .hours-row {
+    font-size: 0.82rem;
+  }
+}
