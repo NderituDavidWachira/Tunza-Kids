@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "../styles/Admission.css";
 
-// ── Update this to match your actual domain ──────────────────
 const API_URL = "https://tunzachildhub.co.ke/api/submit.php";
-
 
 const Admissions = () => {
   const [formData, setFormData] = useState({
@@ -16,11 +14,18 @@ const Admissions = () => {
     classes:     "",
   });
 
-  const [status, setStatus]   = useState("idle"); // idle | loading | success | error
+  const [status, setStatus]     = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
+  const isDaycare = formData.program === "daycare";
+
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+      ...(name === "program" ? { classes: "" } : {}),
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -51,13 +56,18 @@ const Admissions = () => {
 
   return (
     <section className="admissions">
-      <h2>Admissions &amp; Enrolment</h2>
-      <p>
-        Admissions are ongoing across all programs. We invite parents and guardians to visit our
-        school during weekdays within working hours.
-      </p>
+
+      <div className="admissions-header">
+        <h1>Admissions &amp; <em>Enrolment</em></h1>
+        <p>
+          Admissions are ongoing across all programs. We invite parents and guardians
+          to visit our school during weekdays within working hours.
+        </p>
+      </div>
 
       <form onSubmit={handleSubmit} className="admission-form" noValidate>
+
+        <p className="form-title">Enquiry Form</p>
 
         {status === "success" && (
           <div className="form-alert form-alert--success">
@@ -70,67 +80,118 @@ const Admissions = () => {
           </div>
         )}
 
-        <input
-          type="text" name="parentName"
-          placeholder="Parent / Guardian Name *"
-          value={formData.parentName} onChange={handleChange} required
-        />
-        <input
-          type="email" name="email"
-          placeholder="Email Address *"
-          value={formData.email} onChange={handleChange} required
-        />
-        <input
-          type="tel" name="phone"
-          placeholder="Phone Number *"
-          value={formData.phone} onChange={handleChange} required
-        />
-        <input
-          type="text" name="studentName"
-          placeholder="Student Name *"
-          value={formData.studentName} onChange={handleChange} required
-        />
-        <input
-          type="number" name="studentAge"
-          placeholder="Student Age *"
-          min="0" max="10"
-          value={formData.studentAge} onChange={handleChange} required
-        />
+        {/* ── Row: Parent + Email ── */}
+        <div className="form-row">
+          <div className="form-field">
+            <label className="field-label" htmlFor="parentName">Parent / Guardian Name *</label>
+            <input
+              id="parentName" type="text" name="parentName"
+              placeholder="e.g. Jane Wanjiku"
+              value={formData.parentName} onChange={handleChange} required
+            />
+          </div>
+          <div className="form-field">
+            <label className="field-label" htmlFor="email">Email Address *</label>
+            <input
+              id="email" type="email" name="email"
+              placeholder="you@example.com"
+              value={formData.email} onChange={handleChange} required
+            />
+          </div>
+        </div>
 
-        <select name="program" value={formData.program} onChange={handleChange} required>
-          <option value="">Select Program *</option>
-          <option value="playgroup">Playgroup (Ages 1–2)</option>
-          <option value="pp1">Pre-Primary 1 (Ages 3–4)</option>
-          <option value="pp2">Pre-Primary 2 (Ages 4–5)</option>
-        </select>
+        {/* ── Row: Phone + Student Name ── */}
+        <div className="form-row">
+          <div className="form-field">
+            <label className="field-label" htmlFor="phone">Phone Number *</label>
+            <input
+              id="phone" type="tel" name="phone"
+              placeholder="07XX XXX XXX"
+              value={formData.phone} onChange={handleChange} required
+            />
+          </div>
+          <div className="form-field">
+            <label className="field-label" htmlFor="studentName">Student Name *</label>
+            <input
+              id="studentName" type="text" name="studentName"
+              placeholder="Child's full name"
+              value={formData.studentName} onChange={handleChange} required
+            />
+          </div>
+        </div>
 
-        <select name="classes" value={formData.classes} onChange={handleChange} required>
-          <option value="">Select Preferred Class *</option>
-          <option value="morning">Morning (8:00 AM – 12:00 PM)</option>
-          <option value="afternoon">Afternoon (1:00 PM – 5:00 PM)</option>
-        </select>
+        {/* ── Row: Age + Program ── */}
+        <div className="form-row">
+          <div className="form-field">
+            <label className="field-label" htmlFor="studentAge">Student Age *</label>
+            <input
+              id="studentAge" type="number" name="studentAge"
+              placeholder="Age in years"
+              min="0" max="10"
+              value={formData.studentAge} onChange={handleChange} required
+            />
+          </div>
+          <div className="form-field">
+            <label className="field-label" htmlFor="program">Select Program *</label>
+            <select id="program" name="program" value={formData.program} onChange={handleChange} required>
+              <option value="">Choose a program…</option>
+              <option value="daycare">Daycare (From 1 year old)</option>
+              <option value="playgroup">Playgroup ( Age 3)</option>
+              <option value="pp1">Pre Primary 1 (Age 4 - 5)</option>
+              <option value="pp2">Pre Primary 2 (Age 5 - 6)</option>
+            </select>
+          </div>
+        </div>
+
+        {/* ── Daycare only: preferred class ── */}
+        {isDaycare && (
+          <div className="form-field form-field--full daycare-class-field">
+            <label className="field-label">Preferred Class *</label>
+            <div className="class-options">
+
+              {/* Full Day card */}
+              <label
+                className={`class-card ${formData.classes === "fullday" ? "class-card--active" : ""}`}
+                onClick={() => setFormData((prev) => ({ ...prev, classes: "fullday" }))}
+              >
+                <input
+                  type="radio"
+                  name="classes"
+                  value="fullday"
+                  checked={formData.classes === "fullday"}
+                  onChange={handleChange}
+                />
+                <span className="class-card-title">Full Day</span>
+                <span className="class-card-time">7:00 AM – 6:00 PM</span>
+              </label>
+
+              {/* Half Day card */}
+              <label
+                className={`class-card ${formData.classes === "halfday" ? "class-card--active" : ""}`}
+                onClick={() => setFormData((prev) => ({ ...prev, classes: "halfday" }))}
+              >
+                <input
+                  type="radio"
+                  name="classes"
+                  value="halfday"
+                  checked={formData.classes === "halfday"}
+                  onChange={handleChange}
+                />
+              
+                <span className="class-card-title">Half Day</span>
+                <span className="class-card-time">7:00 AM – 12:00 PM</span>
+              </label>
+
+            </div>
+          </div>
+        )}
 
         <button type="submit" disabled={status === "loading"}>
-          {status === "loading" ? "Submitting…" : "Submit Application"}
+          {status === "loading" ? "Submitting…" : "Submit Application →"}
         </button>
+
       </form>
 
-      <section className="admission-info">
-        <h3>Location</h3>
-        <p>7th Riverview Avenue, Imani Estate, along Ruiru-Githunguri Road</p>
-
-        <h3>Contact</h3>
-        <p>
-          <a href="tel:0723051405">0723 051 405</a><br />
-          <a href="mailto:tunzakidsacademy@gmail.com">tunzakidsacademy@gmail.com</a>
-        </p>
-
-        <h3>Our Promise</h3>
-        <p>
-          At Tunza Kids Academy, we are committed to nurturing young minds and hearts, laying a firm
-          foundation for lifelong learning, character, and purpose.
-        </p>
-      </section>
     </section>
   );
 };

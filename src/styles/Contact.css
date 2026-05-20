@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@400;500;600&display=swap');
 
-/* =========================
-   BASE
-========================= */
 *,
 *::before,
 *::after {
@@ -16,48 +13,40 @@
 ========================= */
 .contact {
   background: #f7f5f0;
-  padding: 2.5rem 7% 2rem;
   font-family: 'Instrument Sans', sans-serif;
-  min-height: calc(100vh - 72px);
+  color: #333333;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 0 0;        /* no horizontal padding here — handled by inner wrapper */
+  width: 100%;
 }
 
 /* =========================
-   HEADER — compact
+   INNER WRAPPER — controls all horizontal spacing
+========================= */
+.contact-header,
+.contact-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 2rem;            /* ← same padding both sides, guaranteed equal */
+}
+
+/* =========================
+   HEADER
 ========================= */
 .contact-header {
-  margin-bottom: 1.8rem;
-}
-
-.contact-header-kicker {
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #6a9e7b;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contact-header-kicker::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 1.5px;
-  background: #6a9e7b;
-  flex-shrink: 0;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .contact-header h2 {
   font-family: 'Lora', serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 700;
-  color: #1c1b18;
+  color: #152238;
   line-height: 1.1;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.6rem;
 }
 
 .contact-header h2 em {
@@ -66,11 +55,12 @@
 }
 
 .contact-header p {
-  font-size: 0.88rem;
-  color: #6b6960;
+  font-size: 1.1rem;
+  color: #334155;
   line-height: 1.7;
-  max-width: 380px;
   font-weight: 400;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 /* =========================
@@ -78,47 +68,47 @@
 ========================= */
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: start;
-  flex: 1;
-  min-width: 0;
+  align-items: flex-start;
+  margin-bottom: 3rem;
 }
 
-/* =========================
-   LEFT — CONTACT INFO
-========================= */
+/* LEFT — DETAILS */
 .contact-info {
   display: flex;
   flex-direction: column;
   border-top: 1px solid #dedad3;
+  padding-top: 1.5rem;
   min-width: 0;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .contact-row {
-  display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 14px;
-  align-items: start;
-  padding: 1.1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
   border-bottom: 1px solid #dedad3;
+  width: 100%;
 }
 
 .contact-row-icon {
   width: 32px;
   height: 32px;
-  border-radius: 7px;
+  border-radius: 8px;
   background: #e8f0eb;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .contact-row-icon svg {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   stroke: #3d6b4f;
   fill: none;
   stroke-width: 1.8;
@@ -126,18 +116,24 @@
   stroke-linejoin: round;
 }
 
+.contact-row-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .contact-row-label {
-  font-size: 0.63rem;
-  letter-spacing: 0.18em;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #8a8880;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
 .contact-row-value {
-  font-size: 0.9rem;
-  color: #2e2d29;
+  font-size: 1rem;
+  color: #333333;
   line-height: 1.65;
   font-weight: 400;
   word-break: break-word;
@@ -156,43 +152,43 @@
   border-bottom-color: #1a2e1f;
 }
 
-/* =========================
-   OPENING HOURS
-========================= */
 .contact-hours {
-  padding: 1.1rem 0;
+  padding: 1.2rem 0;
   border-bottom: 1px solid #dedad3;
+  width: 100%;
 }
 
 .contact-hours-label {
-  font-size: 0.63rem;
-  letter-spacing: 0.18em;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #8a8880;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+  text-align: left;
 }
 
 .hours-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .hours-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+  gap: 1rem;
 }
 
 .hours-row span:first-child {
-  color: #6b6960;
+  color: #334155;
   font-weight: 400;
 }
 
 .hours-row span:last-child {
-  color: #2e2d29;
+  color: #333333;
   font-weight: 500;
 }
 
@@ -200,72 +196,87 @@
   color: #3d6b4f;
 }
 
-/* =========================
-   RIGHT — MAP
-========================= */
-.map-col {
+/* RIGHT — SCHOOL IMAGE */
+.image-col {
   display: flex;
   flex-direction: column;
   min-width: 0;
   width: 100%;
 }
 
-.map-wrapper {
+.image-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 1px solid #dedad3;
-  padding-bottom: 62%;
+  padding-bottom: 70%;
   height: 0;
   background: #e8f0eb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.map-wrapper iframe {
+.contact-school-img {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   FULL-WIDTH MAP SECTION
+   — sits outside inner wrapper so it bleeds edge to edge
+========================= */
+.contact-map-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-map-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #3d6b4f;
+  font-weight: 600;
+  text-align: center;
+  padding: 1.4rem 0;
+  background-color: #f7f5f0;
+  border-top: 1px solid #dedad3;
+  border-bottom: 1px solid #dedad3;
+}
+
+.contact-map-wrapper {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+
+.contact-map-wrapper iframe {
   width: 100%;
   height: 100%;
   border: none;
   display: block;
 }
 
-.map-caption {
-  padding: 0.6rem 0 0;
-  font-size: 0.75rem;
-  color: #8a8880;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.map-caption::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #6a9e7b;
-  flex-shrink: 0;
-}
-
 /* =========================
    TABLET (≤ 860px)
 ========================= */
 @media (max-width: 860px) {
-  .contact {
-    padding: 3rem 6%;
-    min-height: auto;
-  }
-
   .contact-container {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .map-wrapper {
-    padding-bottom: 55%;
+  .contact-map-wrapper {
+    height: 300px;
+  }
+
+  .image-wrapper {
+    padding-bottom: 60%;
   }
 }
 
@@ -273,28 +284,54 @@
    MOBILE (≤ 600px)
 ========================= */
 @media (max-width: 600px) {
-  .contact {
-    padding: 2.2rem 5%;
-  }
-
-  .contact-header {
-    margin-bottom: 1.5rem;
+  .contact-header,
+  .contact-container {
+    padding: 0 1.2rem;
   }
 
   .contact-header h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .contact-header p {
+    font-size: 0.95rem;
   }
 
   .contact-row {
     padding: 1rem 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
   }
 
-  .map-wrapper {
-    padding-bottom: 70%;
+  .contact-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-row-text {
+    align-items: center;
+  }
+
+  .contact-row-value {
+    font-size: 0.95rem;
+  }
+
+  .image-wrapper {
+    padding-bottom: 60%;
     border-radius: 8px;
   }
 
+  .contact-hours-label {
+    text-align: center;
+  }
+
   .hours-row {
-    font-size: 0.82rem;
+    font-size: 0.9rem;
+  }
+
+  .contact-map-wrapper {
+    height: 240px;
   }
 }

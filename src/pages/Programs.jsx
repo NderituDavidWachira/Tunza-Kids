@@ -10,14 +10,9 @@ const programsData = [
     title: "Daycare",
     tagline: "A safe, nurturing environment for your youngest.",
     description:
-      "We are committed to providing a safe, nurturing, and exciting environment where children from six weeks old learn, grow, and thrive. Our goal is to create a warm and friendly space where children feel valued, loved, and encouraged to explore their unique abilities and talents at their own pace.",
-    ageGroup: "Ages 6 weeks – 2 years",
-    highlights: [
-      "Nutritious meals prepared daily",
-      "Supervised, age-appropriate play areas",
-      "Dedicated diaper changing facilities",
-      "Structured rest time accommodation",
-    ],
+      "At our daycare facility, we are committed to providing a safe, nurturing, and exciting environment for children from 1 year old where they learn, grow, and thrive. We understand that the early years are essential for building a strong foundation for future success therefore our goal is to create a warm and friendly space where children feel valued, loved, and encouraged to explore their unique abilities and talents. Working daily from 7:00 a.m. to 6:00 p.m., our daycare is intended to support families by offering reliable, flexible (half day or full day) and affordable childcare services throughout the day. We provide a structured yet enjoyable routine that balances play, rest, and interaction. We engage children in various activities: creative play, storytelling, music, and hands-on experiences which enhance confidence, interest, independence, and positive social skills.We endeavor to maintain a clean, secure, and inclusive environment where every child feels comfortable and protected.",
+    ageGroup: "From 1 year old,",
+   
     image: daycareImg,
     imageAlt: "Daycare children in a safe play environment",
   },
@@ -26,14 +21,9 @@ const programsData = [
     title: "Playgroup",
     tagline: "Learning the skills that last a lifetime — through play.",
     description:
-      "Our Playgroup program provides a warm and engaging learning environment focused on basic life skills. Through daily routines and guided activities, children develop personal hygiene, independence, sharing, communication, teamwork, and self-discipline alongside essential classroom etiquettes that will serve them for years to come.",
-    ageGroup: "Ages 2 – 3 years",
-    highlights: [
-      "Guided group play activities",
-      "Language and communication development",
-      "Fine motor skills through hands-on tasks",
-      "Social interaction and peer bonding",
-    ],
+      "Playgroup program provides a warm and engaging learning environment designed for children aged 3 years. At this stage we major in training children basic life skills. Through daily routines and guided activities, they learn basic skills like personal hygiene, independence, sharing, communication, teamwork, respect, and self-discipline. We also introduce learners to basic learning etiquettes including: listening attentively, following instructions, participating in class activities, and interacting respectfully with teachers and peers.",
+    ageGroup: "Age 3 ",
+   
     image: playgroupImg,
     imageAlt: "Children engaged in playgroup activities",
   },
@@ -42,15 +32,10 @@ const programsData = [
     title: "Pre-Primary 1",
     tagline: "First steps into literacy, numeracy, and big ideas.",
     description:
-      "Under the Competency Based Education (CBE) Curriculum, our PP1 program builds a strong educational foundation for children aged 3–4 years. Foundational literacy and numeracy are introduced while curiosity, critical thinking, and problem-solving are sparked through songs, storytelling, art, movement, and hands-on learning experiences.",
-    ageGroup: "Ages 3 – 4 years",
-    highlights: [
-      "Letter recognition and early reading",
-      "Number basics and counting",
-      "Creative expression through art and music",
-      "Phonics introduction",
-    ],
-    image: pp1Img,
+      "Our Pre-Primary One program under the Competency Based Education (CBE) Curriculum is designed to provide a strong educational foundation for children aged 4-5 years. The learners are introduced to foundational literacy and numeracy skills while encouraging curiosity, critical thinking, and problem-solving through songs, storytelling, play, art, movement activities, and hands-on learning. We focus on developing core competencies such as communication and collaboration, self-efficacy, digital literacy, creativity, and citizenship. Our well trained teachers guide learners with patience and understanding, ensuring that every child progresses at their own pace and feels motivated to learn. We believe that every child learns at their own pace, and we work closely with parents to ensure holistic development.",
+    ageGroup: "Age 4 - 5",
+   
+    image: pp2Img,
     imageAlt: "PP1 learners in a classroom setting",
   },
   {
@@ -58,15 +43,10 @@ const programsData = [
     title: "Pre-Primary 2",
     tagline: "Confident, ready, and excited for what comes next.",
     description:
-      "Our PP2 program strengthens foundational learning and prepares children for primary education. We provide a nurturing, child-friendly environment where learners develop literacy, numeracy, creativity, and problem-solving through interactive experiences. Every child is supported individually — growing into a confident, curious learner ready for the next chapter.",
-    ageGroup: "Ages 4 – 5 years",
-    highlights: [
-      "Advanced literacy and reading readiness",
-      "Math concepts and logical thinking",
-      "School transition preparation",
-      "Emotional intelligence and self-regulation",
-    ],
-    image: pp2Img,
+      "Our Pre-Primary Two (PP2) program under the Competency Based Education (CBE) Curriculum is designed for children aged 5–6 years to strengthen foundational learning and prepare them for primary education. We provide a nurturing, child-friendly environment where learners develop literacy, numeracy, communication, creativity, and problem-solving skills through interactive and practical learning experiences. Our teachers support every learner according to their individual learning needs, ensuring they grow into confident, curious, and responsible learners ready for the transition to primary school.",
+    ageGroup: "Age 5 - 6",
+   
+    image: pp1Img,
     imageAlt: "PP2 children preparing for primary school",
   },
 ];
@@ -115,12 +95,6 @@ const Programs = () => {
                 <p className="program-age">{program.ageGroup}</p>
                 <p className="program-tagline">{program.tagline}</p>
                 <p className="program-description">{program.description}</p>
-                <p className="highlights-label">Program highlights</p>
-                <ul className="highlights-list">
-                  {program.highlights.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
               </div>
             </section>
           );

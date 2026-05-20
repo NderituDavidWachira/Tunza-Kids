@@ -16,10 +16,6 @@ export default function About() {
               socially, emotionally, physically, and morally. We provide a safe, caring, and stimulating environment where children are
               guided to discover their potential, build confidence, and develop a love for learning from an early age.
             </p>
-            <p>
-              Our approach recognises that every child is unique and thrives best when learning is grounded in care, structure, play,
-              and positive values.
-            </p>
           </div>
           <img src={storyImg} alt="Early learning classroom" className="story-image" loading="lazy" />
         </div>
@@ -41,61 +37,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      <section className="programmes-section">
-        <h2>Our Learning Programmes</h2>
-        <p>
-          Tunza Kids Academy offers structured early childhood programmes designed to support children at every foundational stage:
-        </p>
-        <div className="cards-grid">
-          <div className="card">
-            <h3>Daycare</h3>
-            <p>A safe, caring, and nurturing environment for infants and young children.</p>
-          </div>
-          <div className="card">
-            <h3>Playgroup</h3>
-            <p>Learning through play, interaction, and guided discovery.</p>
-          </div>
-          <div className="card">
-            <h3>Pre-Primary 1 (PP1)</h3>
-            <p>Building early literacy, numeracy, and social skills.</p>
-          </div>
-          <div className="card">
-            <h3>Pre-Primary 2 (PP2)</h3>
-            <p>Preparing children confidently for primary school.</p>
-          </div>
-        </div>
-        <p>
-          Each programme is delivered through age-appropriate activities that promote curiosity, discipline, creativity,
-          and independence.
-        </p>
-      </section>
-
-      <section className="philosophy-section">
-        <h2>Our Learning Philosophy</h2>
-        <p>
-          At Tunza Kids Academy, we believe that strong foundations shape strong futures. Our learning philosophy focuses on:
-        </p>
-        <div className="cards-grid">
-          <div className="card">
-            <h3>Holistic Child Development</h3>
-            <p>Supporting growth across all developmental areas.</p>
-          </div>
-          <div className="card">
-            <h3>Learning Through Play</h3>
-            <p>Exploration and guided instruction for natural learning.</p>
-          </div>
-          <div className="card">
-            <h3>Positive Discipline</h3>
-            <p>Character formation through respectful guidance.</p>
-          </div>
-          <div className="card">
-            <h3>Partnership</h3>
-            <p>School, parents, and caregivers working together.</p>
-          </div>
-        </div>
-      </section>
-
       <section className="environment-section">
         <h2>Safe, Supportive & Child-Friendly Environment</h2>
         <div className="cards-grid">
@@ -116,50 +57,31 @@ export default function About() {
             <p>Safe and dependable school transportation services.</p>
           </div>
         </div>
-        <p style={{ marginTop: '2rem' }}>
-          Children learn best when they feel safe, valued, and loved—and this is at the heart of everything we do.
-        </p>
       </section>
 
       <section className="why-section">
         <h2>Why Choose Tunza Kids Academy</h2>
         <div className="cards-grid">
-          <div className="card">
-            <h3>Nurturing & Disciplined</h3>
-            <p>A balanced learning environment with care and structure.</p>
-          </div>
-          <div className="card">
-            <h3>Individual Attention</h3>
-            <p>Child-focused care tailored to each learner's needs.</p>
-          </div>
-          <div className="card">
-            <h3>Balanced Development</h3>
-            <p>Academic excellence combined with character growth.</p>
-          </div>
-          <div className="card">
+           <div className="card">
             <h3>Strong Values</h3>
             <p>Character formation grounded in respect and kindness.</p>
           </div>
           <div className="card">
-            <h3>Safe Transport</h3>
-            <p>Reliable school transportation for peace of mind.</p>
+            <h3>Respect</h3>
+            <p>A balanced learning environment with care and structure.</p>
+          </div>
+          <div className="card">
+            <h3>Obedience</h3>
+            <p>Child focused care tailored to each learner's needs.</p>
           </div>
         </div>
       </section>
 
       <section className="admissions-section">
-        <h2>Admissions & Enrolment</h2>
-        <p>Admissions are ongoing across all programmes.</p>
-        <p>📍 Location: 7th Riverview Avenue, Imani Estate, along Ruiru-Githunguri Road</p>
-        <p>📞 Contact: 0723 051 405</p>
-        <p>
-          We warmly invite parents and guardians to visit the school, meet our team, and experience the Tunza Kids Academy environment firsthand.
-        </p>
         <div className="promise-box">
           <h3>Our Promise</h3>
           <p>
-            At Tunza Kids Academy, we are committed to nurturing young minds and hearts, laying a firm foundation for lifelong learning,
-            character, and purpose.
+            At Tunza Kids Academy, we are committed to nurturing children through holistic values that inspire growth in mind, character, creativity, and compassion
           </p>
         </div>
       </section>

@@ -6,26 +6,26 @@ import heroVideo from '../assets/7.mp4';
 /* ─── data ─────────────────────────────────────────────────── */
 const programs = [
   {
-    title: 'Playgroup',
-    age: 'Ages 2 – 3 years',
+    title: 'Daycare',
+    age: 'From 1 year old',
     summary: 'Discovery through play, language and social development.',
    
   },
   {
     title: 'Playgroup',
-    age: 'Ages 2 – 3 years',
+    age: 'Age 3',
     summary: 'Discovery through play, language and social development.',
    
   },
   {
     title: 'Pre-Primary 1',
-    age: 'Ages 3 – 4 years',
+    age: 'Age 4 - 5',
     summary: 'Early literacy, numeracy and confidence-building lessons.',
     
   },
   {
     title: 'Pre-Primary 2',
-    age: 'Ages 4 – 5 years',
+    age: 'Age 5 - 6',
     summary: 'School readiness and strong foundational learning skills.',
     
   },
@@ -217,7 +217,7 @@ export default function Home() {
           font-weight: 700; color: #ffffff;
           line-height: 1.1; margin-bottom: 1rem;
         }
-        .tka-hero h1 em { font-style: italic; color: #e8c98a; }
+        .tka-hero h1 em { font-style: italic; color: #fcd60f; }
         .tka-hero-p {
           font-family: 'Lora', Georgia, serif;
           font-size: clamp(0.9rem, 1.3vw, 1.02rem);
@@ -288,7 +288,7 @@ export default function Home() {
           display: block;
           font-family: 'Playfair Display', Georgia, serif;
           font-size: 2rem; font-weight: 700;
-          color: #e8c98a; line-height: 1;
+          color: #fcd60f; line-height: 1;
         }
         .tka-feature-badge span {
           font-size: 0.68rem; letter-spacing: 0.1em;
@@ -299,7 +299,7 @@ export default function Home() {
         .tka-section-label {
           font-size: 0.66rem; font-weight: 600;
           letter-spacing: 0.18em; text-transform: uppercase;
-          color: #c97d2e; margin-bottom: 0.55rem; display: block;
+          color: #fcd60f; margin-bottom: 0.55rem; display: block;
         }
         .tka-h2 {
           font-family: 'Playfair Display', Georgia, serif;

@@ -2,12 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, var(--accent), var(--secondary));
-  padding: 0.75rem 2rem;
+  background: whitesmoke;
+  padding: 0.5rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: var(--shadow);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e0ddd8;
 }
 
 .logo {
@@ -17,39 +18,43 @@
 }
 
 .logo img {
-  height: 60px;
+  height: 75px;
   width: auto;
-  transition: transform 0.3s ease;
-  filter: brightness(0) invert(1);
+  object-fit: contain;
+  transform-origin: left center;
+  transition: filter 0.2s ease;
 }
 
 .logo:hover img {
-  transform: scale(1.05);
+  filter: brightness(1.05);
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navbar ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #d12829 ;
   font-weight: 600;
-  transition: color 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius);
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius, 8px);
 }
 
-.navbar ul li a:hover {
-  background: rgba(255, 255, 255, 0.2);
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  background: #3d6b4f;
   color: #fff;
 }
 
-/* Hamburger button — hidden on desktop */
+/* Hamburger — hidden on desktop */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -66,12 +71,11 @@
   display: block;
   width: 26px;
   height: 3px;
-  background: #fff;
+  background: #3d6b4f;
   border-radius: 3px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Animate hamburger → X when open */
 .hamburger.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -83,6 +87,15 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1.25rem;
+  }
+
+  .logo img {
+    height: 60px;
+    transform-origin: left center;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -95,9 +108,10 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg, var(--accent), var(--secondary));
-    padding: 1rem 0;
-    box-shadow: var(--shadow);
+    background: whitesmoke;
+    border-bottom: 1px solid #e0ddd8;
+    padding: 0.75rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
   .navbar ul.open {
@@ -108,13 +122,11 @@
     display: block;
     padding: 0.75rem 2rem;
     border-radius: 0;
+    color: #d12829;
   }
 
   .navbar ul li a:hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
-
-  .logo img {
-    height: 50px;
+    background: #3d6b4f;
+    color: #fff;
   }
 }

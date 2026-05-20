@@ -27,12 +27,12 @@ body,
   overflow-x: hidden;
 }
 
-/* === Section common styles === */
+/* === Section common styles — reduced from 80px to 40px === */
 .about-page section {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 80px 5%;
+  padding: 40px 5%;          /* ← was 80px */
   text-align: center;
 }
 
@@ -92,19 +92,19 @@ body,
   font-weight: 400;
 }
 
-/* === Typography & Common Elements inside content === */
+/* === Typography & Common Elements === */
 .about-page h2 {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);   /* ← slightly smaller */
+  margin-bottom: 1rem;                       /* ← was 1.5rem */
   font-weight: 800;
   letter-spacing: -1px;
 }
 
 .about-page p {
-  font-size: 1.15rem;
+  font-size: 1.05rem;                        /* ← was 1.15rem */
   line-height: 1.9;
   color: #334155;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;                       /* ← was 1.25rem */
   font-weight: 400;
 }
 
@@ -117,29 +117,28 @@ body,
   display: block;
 }
 
-/* === Story Section === */
+/* === Story section === */
 .story-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;                                 /* ← was 4rem */
   align-items: center;
 }
 
 .story-image {
-  height: 460px;
+  height: 380px;                             /* ← was 460px */
 }
 
 /* === Vision/Mission Section === */
 .vision-mission-section {
   background: linear-gradient(135deg, #f0fff4 0%, #c3e6cb 100%);
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 40px;                         /* ← was 70px */
+  padding-bottom: 40px;
 }
 
-/* === REMOVED TOP MARKED WHITE SECTION === */
 .vision-mission-section::before {
   display: none;
   content: none;
@@ -147,8 +146,8 @@ body,
 
 .vision-mission-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;                               /* ← was 2rem */
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -160,13 +159,10 @@ body,
 .mission-card,
 .motto-card {
   background: #ffffff;
-  border-radius: 24px;
-  padding: 2.2rem 2rem;
+  border-radius: 20px;
+  padding: 1.8rem 1.6rem;                    /* ← was 2.2rem 2rem */
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-
-  /* REMOVED THE TOP DARK BORDER CAUSING MARKED SECTION */
   border-top: none;
-
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -181,10 +177,10 @@ body,
 .mission-card h3,
 .motto-card h3 {
   color: black;
-  font-size: 1.7rem;
-  margin-bottom: 1.3rem;
+  font-size: 1.5rem;                         /* ← was 1.7rem */
+  margin-bottom: 1rem;                       /* ← was 1.3rem */
   font-weight: 700;
-  padding: 0.7rem 1.5rem;
+  padding: 0.5rem 1.2rem;                    /* ← was 0.7rem 1.5rem */
   border-radius: 14px;
   display: inline-block;
   letter-spacing: 0.5px;
@@ -194,30 +190,28 @@ body,
 .mission-card p,
 .motto-card p {
   color: #334155;
-  line-height: 1.9;
-  font-size: 1.12rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
   font-weight: 400;
 }
 
-/* === Standard Grid for Programmes/Philosophy/Environment === */
+/* === Standard Grid === */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;                               /* ← was 1.5rem */
   max-width: 1200px;
-  margin: 2.5rem auto 0;
-  padding: 1rem;
+  margin: 1.5rem auto 0;                     /* ← was 2.5rem */
+  padding: 0.5rem;                           /* ← was 1rem */
 }
 
 .card {
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 20px;
-  padding: 1.7rem 1.4rem;
+  border-radius: 18px;                       /* ← was 20px */
+  padding: 1.4rem 1.2rem;                    /* ← was 1.7rem 1.4rem */
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.05);
-  transition: transform 0.25s ease,
-              box-shadow 0.25s ease,
-              background 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   text-align: left;
 }
 
@@ -229,31 +223,31 @@ body,
 
 .card h3 {
   color: #0f172a;
-  font-size: 1.35rem;
-  margin: 0 0 0.9rem 0;
+  font-size: 1.2rem;                         /* ← was 1.35rem */
+  margin: 0 0 0.6rem 0;                      /* ← was 0.9rem */
   font-weight: 700;
 }
 
 .card p {
   color: #334155;
-  line-height: 1.75;
-  font-size: 1.05rem;
+  line-height: 1.7;
+  font-size: 1rem;                           /* ← was 1.05rem */
   margin: 0;
 }
 
-/* === Admissions Section styling === */
+/* === Admissions / Promise section === */
 .feature-list {
   list-style: none;
   padding: 0;
   text-align: left;
   max-width: 650px;
-  margin: 1.8rem auto;
+  margin: 1.2rem auto;                       /* ← was 1.8rem */
 }
 
 .feature-list li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;                     /* ← was 1rem */
   color: #334155;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   line-height: 1.8;
 }
 
@@ -266,25 +260,22 @@ body,
 
 .promise-box {
   background-color: #a8e6cf;
-  border-radius: 24px;
-  padding: 2.5rem;
-  margin-top: 2rem;
-
-  /* REMOVED LEFT BORDER CAUSING MARKED LINE */
+  border-radius: 20px;
+  padding: 2rem;                             /* ← was 2.5rem */
+  margin-top: 1rem;                          /* ← was 2rem */
   border-left: none;
-
   box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
 }
 
 .promise-box h3 {
   color: #0f172a;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 0.75rem;                    /* ← was 1rem */
+  font-size: 1.8rem;                         /* ← was 2rem */
   font-weight: 700;
 }
 
 .promise-box p {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1.9;
 }
 
@@ -297,7 +288,7 @@ body,
 
   .story-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .story-image,
@@ -306,32 +297,32 @@ body,
   }
 
   .about-page section {
-    padding: 60px 6%;
+    padding: 32px 6%;                        /* ← was 60px */
   }
 
   .vision-card,
   .mission-card,
   .motto-card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.2rem;
   }
 
   .about-page p {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 560px) {
   .about-hero h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     line-height: 1.2;
   }
 
   .about-hero p {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .about-page h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .vision-card h3,

@@ -1,30 +1,155 @@
+/* =============================================
+   TUNZA KIDS ACADEMY — GLOBAL CSS
+   Brand palette:
+     Red    #d12829
+     Yellow #fcd60f
+     Grey   #9d9490
+     Green  (navbar/footer gradient — keep as-is)
+     White  #ffffff  (primary background)
+============================================= */
+
+:root {
+  /* Brand colours */
+  --color-red:     #d12829;
+  --color-yellow:  #fcd60f;
+  --color-grey:    #9d9490;
+  --color-grey-lt: #f2f0ef;   /* very light grey for subtle backgrounds */
+
+  /* Text */
+  --color-text:       #1c1b18;  /* near-black body text */
+  --color-text-muted: #6b6960;  /* secondary / captions */
+
+  /* Surfaces */
+  --color-bg:        #ffffff;
+  --color-bg-soft:   #f9f8f6;   /* off-white section backgrounds */
+  --color-border:    #e4e1dc;
+
+  /* Accent (replaces old blue #4a90e2) */
+  --color-accent: var(--color-red);
+
+  /* Green gradient — navbar & footer only */
+  --green-dark:   #2d5a3f;
+  --green-mid:    #3d6b4f;
+  --green-light:  #6a9e7b;
+  --gradient-green: linear-gradient(90deg, var(--green-dark), var(--green-mid));
+
+  /* Misc */
+  --radius: 8px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
-  color: #333;
+  background: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
 }
 
+/* ── Headings — brand red instead of old blue ── */
 h1, h2, h3 {
-  color: #4a90e2; 
+  color: var(--color-red);
   margin-bottom: 0.5rem;
 }
 
+h4, h5, h6 {
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+/* ── Sections ── */
 section {
   padding: 3rem 2rem;
   max-width: 1200px;
   margin: auto;
 }
 
+/* ── Typography ── */
 p {
   margin-bottom: 1rem;
+  color: var(--color-text);
 }
 
 ul {
   padding-left: 1.2rem;
 }
 
+/* ── Links ── */
+a {
+  color: var(--color-red);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--green-mid);
+}
+
+/* ── Buttons ── */
 button {
   cursor: pointer;
+}
+
+/* Filled / primary button */
+.btn-primary {
+  background: var(--color-red);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: #b81f20;
+  transform: translateY(-1px);
+}
+
+/* Outlined / secondary button */
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-grey);
+  padding: 0.5rem 1.35rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+/* Yellow highlight utility */
+.highlight-yellow {
+  background: var(--color-yellow);
+  color: var(--color-text);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+/* Grey badge utility */
+.badge-grey {
+  background: var(--color-grey-lt);
+  color: var(--color-grey);
+  border: 1px solid var(--color-border);
+  padding: 0.2em 0.6em;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
