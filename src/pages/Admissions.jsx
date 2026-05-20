@@ -14,7 +14,7 @@ const Admissions = () => {
     classes:     "",
   });
 
-  const [status, setStatus]     = useState("idle");
+  const [status, setStatus]   = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const isDaycare = formData.program === "daycare";
@@ -28,8 +28,26 @@ const Admissions = () => {
     }));
   };
 
+  const validate = () => {
+    if (!formData.parentName.trim())  return "Parent / Guardian name is required.";
+    if (!formData.email.trim())       return "Email address is required.";
+    if (!formData.phone.trim())       return "Phone number is required.";
+    if (!formData.studentName.trim()) return "Student name is required.";
+    if (!formData.studentAge)         return "Student age is required.";
+    if (!formData.program)            return "Please select a program.";
+    if (isDaycare && !formData.classes) return "Please select a preferred class for Daycare.";
+    return null;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const validationError = validate();
+    if (validationError) {
+      setStatus("error");
+      setErrorMsg(validationError);
+      return;
+    }
+
     setStatus("loading");
     setErrorMsg("");
 
@@ -56,7 +74,6 @@ const Admissions = () => {
 
   return (
     <section className="admissions">
-
       <div className="admissions-header">
         <h1>Admissions &amp; <em>Enrolment</em></h1>
         <p>
@@ -66,17 +83,16 @@ const Admissions = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="admission-form" noValidate>
-
         <p className="form-title">Enquiry Form</p>
 
         {status === "success" && (
           <div className="form-alert form-alert--success">
-            ✅ Application submitted successfully! We will get back to you within 2 working days.
+            Application submitted successfully!
           </div>
         )}
         {status === "error" && (
           <div className="form-alert form-alert--error">
-            ⚠️ {errorMsg}
+            {errorMsg}
           </div>
         )}
 
@@ -87,7 +103,7 @@ const Admissions = () => {
             <input
               id="parentName" type="text" name="parentName"
               placeholder="e.g. Jane Wanjiku"
-              value={formData.parentName} onChange={handleChange} required
+              value={formData.parentName} onChange={handleChange}
             />
           </div>
           <div className="form-field">
@@ -95,7 +111,7 @@ const Admissions = () => {
             <input
               id="email" type="email" name="email"
               placeholder="you@example.com"
-              value={formData.email} onChange={handleChange} required
+              value={formData.email} onChange={handleChange}
             />
           </div>
         </div>
@@ -107,7 +123,7 @@ const Admissions = () => {
             <input
               id="phone" type="tel" name="phone"
               placeholder="07XX XXX XXX"
-              value={formData.phone} onChange={handleChange} required
+              value={formData.phone} onChange={handleChange}
             />
           </div>
           <div className="form-field">
@@ -115,7 +131,7 @@ const Admissions = () => {
             <input
               id="studentName" type="text" name="studentName"
               placeholder="Child's full name"
-              value={formData.studentName} onChange={handleChange} required
+              value={formData.studentName} onChange={handleChange}
             />
           </div>
         </div>
@@ -128,15 +144,15 @@ const Admissions = () => {
               id="studentAge" type="number" name="studentAge"
               placeholder="Age in years"
               min="0" max="10"
-              value={formData.studentAge} onChange={handleChange} required
+              value={formData.studentAge} onChange={handleChange}
             />
           </div>
           <div className="form-field">
             <label className="field-label" htmlFor="program">Select Program *</label>
-            <select id="program" name="program" value={formData.program} onChange={handleChange} required>
+            <select id="program" name="program" value={formData.program} onChange={handleChange}>
               <option value="">Choose a program…</option>
               <option value="daycare">Daycare (From 1 year old)</option>
-              <option value="playgroup">Playgroup ( Age 3)</option>
+              <option value="playgroup">Playgroup (Age 3)</option>
               <option value="pp1">Pre Primary 1 (Age 4 - 5)</option>
               <option value="pp2">Pre Primary 2 (Age 5 - 6)</option>
             </select>
@@ -149,37 +165,34 @@ const Admissions = () => {
             <label className="field-label">Preferred Class *</label>
             <div className="class-options">
 
-              {/* Full Day card */}
               <label
                 className={`class-card ${formData.classes === "fullday" ? "class-card--active" : ""}`}
                 onClick={() => setFormData((prev) => ({ ...prev, classes: "fullday" }))}
               >
                 <input
-                  type="radio"
-                  name="classes"
-                  value="fullday"
+                  type="radio" name="classes" value="fullday"
                   checked={formData.classes === "fullday"}
                   onChange={handleChange}
                 />
-                <span className="class-card-title">Full Day</span>
-                <span className="class-card-time">7:00 AM – 6:00 PM</span>
+                <span className="class-card-text">
+                  <span className="class-card-title">Full Day</span>
+                  <span className="class-card-time">7:00 AM – 6:00 PM</span>
+                </span>
               </label>
 
-              {/* Half Day card */}
               <label
                 className={`class-card ${formData.classes === "halfday" ? "class-card--active" : ""}`}
                 onClick={() => setFormData((prev) => ({ ...prev, classes: "halfday" }))}
               >
                 <input
-                  type="radio"
-                  name="classes"
-                  value="halfday"
+                  type="radio" name="classes" value="halfday"
                   checked={formData.classes === "halfday"}
                   onChange={handleChange}
                 />
-              
-                <span className="class-card-title">Half Day</span>
-                <span className="class-card-time">7:00 AM – 12:00 PM</span>
+                <span className="class-card-text">
+                  <span className="class-card-title">Half Day</span>
+                  <span className="class-card-time">7:00 AM – 12:00 PM</span>
+                </span>
               </label>
 
             </div>
@@ -189,9 +202,7 @@ const Admissions = () => {
         <button type="submit" disabled={status === "loading"}>
           {status === "loading" ? "Submitting…" : "Submit Application →"}
         </button>
-
       </form>
-
     </section>
   );
 };
