@@ -10,7 +10,9 @@ export default function About() {
       <section className="about-story-section">
         <div className="story-container">
           <div className="story-text">
-            <h2>About Tunza Kids Academy</h2>
+            <h2 style={{ fontFamily: "'Inter', 'Segoe UI', sans-serif", fontSize: '1.6rem', fontWeight: 600, letterSpacing: '0px' }}>
+              About Tunza Kids Academy
+            </h2>
             <p>
               Tunza Kids Academy is a child-centred early learning institution committed to nurturing the whole child—academically,
               socially, emotionally, physically, and morally. We provide a safe, caring, and stimulating environment where children are
@@ -37,8 +39,11 @@ export default function About() {
           </div>
         </div>
       </section>
+
       <section className="environment-section">
-        <h2>Safe, Supportive & Child-Friendly Environment</h2>
+        <h2 style={{ fontFamily: "'Inter', 'Segoe UI', sans-serif", fontSize: '1.6rem', fontWeight: 600, letterSpacing: '0px' }}>
+          Safe, Supportive & Child-Friendly Environment
+        </h2>
         <div className="cards-grid">
           <div className="card">
             <h3>Secure Facilities</h3>
@@ -60,9 +65,11 @@ export default function About() {
       </section>
 
       <section className="why-section">
-        <h2>Why Choose Tunza Kids Academy</h2>
+        <h2 style={{ fontFamily: "'Inter', 'Segoe UI', sans-serif", fontSize: '1.6rem', fontWeight: 600, letterSpacing: '0px' }}>
+          Why Choose Tunza Kids Academy
+        </h2>
         <div className="cards-grid">
-           <div className="card">
+          <div className="card">
             <h3>Strong Values</h3>
             <p>Character formation grounded in respect and kindness.</p>
           </div>

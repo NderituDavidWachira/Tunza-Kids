@@ -10,13 +10,11 @@ const Contact = () => {
         <p>Visit us, call us, or send us a message.</p>
       </div>
 
-      
       <div className="contact-container">
 
         <div className="contact-info">
 
           <div className="contact-row">
-           
             <div>
               <p>Location</p>
               <p className="contact-row-value">
@@ -96,8 +94,11 @@ const Contact = () => {
         <p className="contact-map-label">Find us on the map</p>
         <div className="contact-map-wrapper">
           <iframe
-            title="Tunza Kids Academy Location"
-            src="https://www.google.com/maps?q=Ruiru-Githunguri+Road,+Imani+Estate,+Kenya&output=embed"
+            title="Tunza Child Hub Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0307634148035!2d36.94110721051989!3d-1.1384374988458634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f47a825b67833%3A0x47677028d2966214!2sTunza%20Child%20Hub!5e0!3m2!1sen!2ske!4v1779262848319!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
